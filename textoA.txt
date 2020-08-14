@@ -7,11 +7,11 @@
         // Validando petición
         Validation<NotifyEifToCirrusDto> validation = new Validation<>(notifyEifToCirrusDto);
         validation.notNull("collectId")
-                .notBlank("srcAccountNumber")
-                .notBlank("srcAccountOwner")
-                .notBlank("srcBankAsfiCode")
-                .notBlank("collectStatus")
-                .notNull("paymentDate")
+                .notBlank("xxxAccountNumber")
+                .notBlank("xxxAccountOwner")
+                .notBlank("xxxBankAsfiCode")
+                .notBlank("xxxxcollectStatus")
+                .notNull("xxxpaymentDate")
                 .check();
 
 
