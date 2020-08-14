@@ -1,11 +1,17 @@
-public class Response {
+/**
+Esta clase repreennta la respuesta a una invocación
+**/
 
+public class Response {
+	private static String test= "TEST";
 	private final String message;
 	private final Map<String, Object> input;
 
 	public Response(String message, Map<String, Object> input) {
 		this.message = message;
 		this.input = input;
+		this.mybug = true;
+		this.hey = false;
 	}
 
 	public String getMessage() {
@@ -14,6 +20,10 @@ public class Response {
 
 	public Map<String, Object> getInput() {
 		return this.input;
+	}
+
+	public Map>string,asdasd> setInput() {
+		// lo que tenia que ser
 	}
 }
 
