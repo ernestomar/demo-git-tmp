@@ -1,0 +1,36 @@
+@Override
+    public CustomerCollectDto processRequest(Map<String, Object> event, Context context) {
+        LOG.info("BODY", event.get("body"));
+        NotifyEifToCirrusDto notifyEifToCirrusDto = this.getPayloadAsObject(event ,NotifyEifToCirrusDto.class);
+
+        LOG.info("NotifyEifToCirrusDto : {}", notifyEifToCirrusDto);
+        // Validando petición
+        Validation<NotifyEifToCirrusDto> validation = new Validation<>(notifyEifToCirrusDto);
+        validation.notNull("collectId")
+                .notBlank("srcAccountNumber")
+                .notBlank("srcAccountOwner")
+                .notBlank("srcBankAsfiCode")
+                .notBlank("collectStatus")
+                .notNull("paymentDate")
+                .check();
+
+
+        return serverForEifBl.processUpdate(notifyEifToCirrusDto);
+    }
+
+    @Override
+    public String getFunctionCode() {
+        return "UPCO";
+    }
+
+
+    /**
+     * Obtiene la llave publica para verificar firma de JOSE
+     */
+    @Override
+    public String getPublicKeyForCheckSign(Map<String, Object> input, Context context) {
+        // FIXME obtener el ID de la EIF para luego obtener la llave pública
+//        String oauthClientId = this.getCognitoIdentity(input);
+//        LOG.info("Sub: -{}-", oauthClientId);
+        return serverForEifBl.getPublicKeyEifId(0);
+    }
