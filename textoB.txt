@@ -6,6 +6,8 @@ public class Response {
 	public Response(String message, Map<String, Object> input) {
 		this.message = message;
 		this.input = input;
+		this.message1 = message1;
+		this.input1 = input1;
 	}
 
 	public String getMessage() {
