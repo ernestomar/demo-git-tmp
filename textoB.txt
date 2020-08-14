@@ -17,5 +17,9 @@ public class Response {
 	public Map<String, Object> getInput() {
 		return this.input;
 	}
+
+	public Map<String, Object> getInput() {
+		return this.input;
+	}
 }
 
