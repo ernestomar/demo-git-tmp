@@ -18,10 +18,6 @@
         return serverForEifBl.processUpdate(notifyEifToCirrusDto);
     }
 
-    @Override
-    public String getFunctionCode() {
-        return "UPCO";
-    }
 
 
     /**
