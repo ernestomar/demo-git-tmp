@@ -11,7 +11,8 @@ public class Response {
 		this.message = message;
 		this.input = input;
 		this.mybug = true;
-		this.hey = false;
+		this.message1 = message1;
+		this.input1 = input1;
 	}
 
 	public String getMessage() {
@@ -22,8 +23,8 @@ public class Response {
 		return this.input;
 	}
 
-	public Map>string,asdasd> setInput() {
-		// lo que tenia que ser
+	public Map<String, Object> setInput() {
+		return this.input;
 	}
 }
 
